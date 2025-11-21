@@ -6,7 +6,7 @@
 using namespace Ansi;
 using namespace std;
 
-static const string menuOptions[] = {"1- New", "2- Display", "3- Exit"};
+static const string menuOptions[] = {"1- New Employee", "2- Display Employees", "3- Exit"};
 static const int totalOptions = sizeof(menuOptions) / sizeof(menuOptions[0]);
 
 int getTotalOptions()
@@ -55,9 +55,9 @@ void printMenu(int selectedOption)
     std::cout << std::flush;
 }
 
-void openScreen(int selectedOption)
-{
-    cout << CLEAR_SCREEN << CURSOR_HOME << flush;
-    cout << move(7, 30);
-    cout << BG_BLUE << FG_BRIGHT_WHITE << BOLD << "=====" << menuOptions[selectedOption] << "=====" << RESET << flush;
-}
+// void openScreen(int selectedOption)
+// {
+//     cout << CLEAR_SCREEN << CURSOR_HOME << flush;
+//     cout << move(7, 30);
+//     cout << BG_BLUE << FG_BRIGHT_WHITE << BOLD << "=====" << menuOptions[selectedOption] << "=====" << RESET << flush;
+// }

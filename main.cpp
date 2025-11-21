@@ -4,12 +4,12 @@
 #include "terminal.hpp"
 #include "ui.hpp"
 #include "input.hpp"
+#include "employee.hpp"
 using namespace Ansi;
 using namespace std;
 
 int main()
 {
-    // --- 1. INITIALIZATION --- //
     init();
     enableRawMode();
 
@@ -64,12 +64,13 @@ int main()
             {
                 isRunning = false;
             }
-            else
+            else if (selectedOption == 0 )
             {
-                openScreen(selectedOption);
-                string msg = "(Press any key...)";
-                cout << move(15, 30) << FG_CYAN << msg << flush;
-                while (readKey() == KEY_UNKNOWN);
+                enterEmployee();
+            }
+            else if (selectedOption == 1 )
+            {
+                displayEmployee();
             }
         }
         break;
